@@ -3,6 +3,7 @@ const { NODE_ENV } = process.env
 console.log('NODE_ENV',NODE_ENV);
 
 export default {
+  hash:true,
   history: 'hash',
   outputPath: `../../dist/renderer`,
   publicPath: './',
