@@ -1,4 +1,6 @@
-const cwd = process.cwd();
+const { NODE_ENV } = process.env
+
+console.log('NODE_ENV',NODE_ENV);
 
 export default {
   history: 'hash',
@@ -14,11 +16,12 @@ export default {
         dll: true,
         hardSource: false,
         routes: {
-          exclude: [/components/],
+          exclude: [/node_modules/],
         },
       },
     ],
   ],
+  proxy:{},
   routes: [
     {
       path: '/',

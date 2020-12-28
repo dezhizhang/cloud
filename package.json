@@ -24,8 +24,8 @@
     "start": "npm run build-main-dev && electron ./dist/main/main.js",
     "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:main\"",
     "pack": "npm run build:renderer && npm run build-main-prod && electron-builder --dir",
-    "dev:main": "electron-webpack dev",
-    "dev:renderer": "APP_ROOT=src/renderer umi dev",
+    "start:main": "electron-webpack dev",
+    "start:renderer": "APP_ROOT=src/renderer umi dev",
     "build-main-prod": "NODE_ENV=production webpack --config ./build/webpack.main.prod.config.js",
     "build-main-dev": "NODE_ENV=development webpack --config ./build/webpack.main.config.js",
     "build:renderer": "APP_ROOT=src/renderer umi build",
@@ -64,7 +64,9 @@
     "webpack-cli": "^3.2.1",
     "webpack-merge": "^4.2.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "antd": "^4.9.4"
+  },
   "electronWebpack": {
     "main": {
       "sourceDirectory": "src/main"
