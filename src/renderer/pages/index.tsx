@@ -1,20 +1,14 @@
 import { connect } from 'dva';
 import React, { Component } from 'react';
-import yay from '@/assets/yay.jpg';
 
-interface IIndexProps {
-  global;
-}
-@connect(global => global)
-export default class Index extends Component<IIndexProps> {
-  static defaultProps: IIndexProps = {};
+
+export default class Index extends Component<any,any> {
+  
 
   render() {
     return (
       <div style={{ textAlign: 'center' }}>
-        <h1>Yay! Welcome to umi-electron-typescript!</h1>
-        {this.props.global.name}
-        <img src={yay} alt="ya" />
+        <h1>hello world</h1>
       </div>
     );
   }
