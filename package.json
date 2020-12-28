@@ -65,6 +65,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.3.0",
     "antd": "^4.9.4"
   },
   "electronWebpack": {
