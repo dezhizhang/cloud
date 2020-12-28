@@ -1,45 +1,53 @@
-# electron-quick-start
+# umi-electron-typescript
 
-**Clone and run for a quick way to see Electron in action.**
+### 一个基于 umijs + electron + typescript 的模板
 
-This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation.
+[![Umi](https://img.souche.com/f2e/a92fc3dfdb4918578861c42bbfcfaf7f.png)](https://umijs.org/)
+[![Webpack](https://img.souche.com/f2e/cdc96229f3f9b7068a9b13f7658a9b0e.png)](https://webpack.js.org/)
+[![TypeScript](https://img.souche.com/f2e/abaffc28828246dcca08eae82a0b34c3.png)](https://www.typescriptlang.org/)
+[![Electron](https://img.souche.com/f2e/4f18b23a82d106ce023cdaf17c6dfd51.png)](https://electronjs.org/)
 
-**Use this app along with the [Electron API Demos](https://electronjs.org/#get-started) app for API code examples to help you get started.**
+## 主要特性
 
-A basic Electron application needs just these files:
+- 支持整个应用的热重载
+- 支持 typescript 语法
 
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
+## 安装
 
-You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start).
+首先通过 git 下载这个仓库到本地
 
-## To Use
+然后通过 yarn 下载依赖
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-git clone https://github.com/electron/electron-quick-start
-# Go into the repository
-cd electron-quick-start
-# Install dependencies
-npm install
-# Run the app
-npm start
+```javascript
+  $ yarn
 ```
 
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+## 开发
 
-## Resources for Learning Electron
+首先通过以下命令启动渲染进程(默认端口：8000)
 
-- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
-- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
-- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- [electron/simple-samples](https://github.com/electron/simple-samples) - small applications with ideas for taking them further
-- [electron/electron-api-demos](https://github.com/electron/electron-api-demos) - an Electron app that teaches you how to use Electron
-- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
+```javascript
+  $ yarn start:renderer
+```
 
-## License
+然后启动主进程
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+```javascript
+  $ yarn start:main
+```
+
+## 打包
+
+```javascript
+  $ npm run pack
+```
+
+如果想把代码打包成一个 dmg 文件或者 zip 文件，可以执行以下命令
+
+```javascript
+  $ npm run dist
+```
+
+## 应用截图
+
+![umi-electron-typescript-image](https://img.souche.com/f2e/f26a29f3232f33dfa1ade9b48df64b6b.png)
