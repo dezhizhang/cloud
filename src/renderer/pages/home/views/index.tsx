@@ -8,7 +8,7 @@ export default class Index extends Component<any,any> {
   render() {
     return (
       <div>
-        <Button type="primary">按钮</Button>
+        <Button type="primary">hello</Button>
       </div>
     );
   }

@@ -17,9 +17,17 @@ const routes = [
     path: '/',
     component: __IS_BROWSER
       ? _dvaDynamic({
-          component: () => import('../index'),
+          app: require('@tmp/dva').getApp(),
+          models: () => [
+            import('/Users/dezhizhang/Documents/project/cloud/src/renderer/pages/home/models/index.ts').then(
+              m => {
+                return { namespace: 'index', ...m.default };
+              },
+            ),
+          ],
+          component: () => import('../home/views/index'),
         })
-      : require('../index').default,
+      : require('../home/views/index').default,
     exact: true,
   },
   {
