@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useState,useEffect } from 'react';
 import { Button,Input,Alert } from 'antd';
 import styles from '../styles/index.less';
 
@@ -6,6 +6,20 @@ const FileSearch = ({title,onFileSearch }) => {
     const [ inputActive,setInputActive ] = useState(false);
     const [ value,setValue ] = useState('');
 
+    useEffect(() => {
+        const handleInputEvent = (event) => {
+            const { keyCode } = event;
+            if(keyCode === 12 && inputActive) {
+                onFileSearch(value);
+            } else if(keyCode === 27 && inputActive) {
+
+            }
+        }
+        document.addEventListener('keyup',handleInputEvent);
+        return () => {
+            document.removeEventListener('keyup',handleInputEvent);
+        }
+    });
     return (
         <div>
             {   !inputActive && 
