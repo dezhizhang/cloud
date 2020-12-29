@@ -95,7 +95,7 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.11":
+"@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.11", "@babel/code-frame@^7.5.5":
   version "7.12.11"
   resolved "https://registry.npm.taobao.org/@babel/code-frame/download/@babel/code-frame-7.12.11.tgz?cache=0&sync_timestamp=1608076996164&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fcode-frame%2Fdownload%2F%40babel%2Fcode-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
   integrity sha1-9K1DWqJj25NbjxDyxVLSP7cWpj8=
@@ -6186,13 +6186,13 @@ electron-webpack-js@~2.4.1:
     babel-loader "^8.1.0"
     babel-plugin-component "^1.1.1"
 
-electron-webpack-ts@^3.1.1:
-  version "3.2.0"
-  resolved "https://registry.npm.taobao.org/electron-webpack-ts/download/electron-webpack-ts-3.2.0.tgz#c426355bc29a6a7feb8806d10920886154b0edbf"
-  integrity sha1-xCY1W8Kaan/riAbRCSCIYVSw7b8=
+electron-webpack-ts@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/electron-webpack-ts/-/electron-webpack-ts-4.0.1.tgz#bb54d4c7a0d3626e579bdf88f0a4014d4417bc41"
+  integrity sha512-XzuQva+xm6T8LJbky0cLc+Cg4NCKMFXbMypyPsL5uXW4UmTVWQCli27Yg9ljpmBMYMi+8TtAFBS/MvvPegKCGg==
   dependencies:
-    fork-ts-checker-webpack-plugin "^1.3.1"
-    ts-loader "^6.0.0"
+    fork-ts-checker-webpack-plugin "^4.1.2"
+    ts-loader "^6.2.2"
 
 electron-webpack@^2.6.2:
   version "2.8.2"
@@ -7672,14 +7672,13 @@ fork-ts-checker-webpack-plugin@3.1.1:
     tapable "^1.0.0"
     worker-rpc "^0.1.0"
 
-fork-ts-checker-webpack-plugin@^1.3.1:
-  version "1.6.0"
-  resolved "https://registry.npm.taobao.org/fork-ts-checker-webpack-plugin/download/fork-ts-checker-webpack-plugin-1.6.0.tgz?cache=0&sync_timestamp=1608487315938&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ffork-ts-checker-webpack-plugin%2Fdownload%2Ffork-ts-checker-webpack-plugin-1.6.0.tgz#a81fd1c6bf5258fa5318cf3e9a7e9bac006f7917"
-  integrity sha1-qB/Rxr9SWPpTGM8+mn6brABveRc=
+fork-ts-checker-webpack-plugin@^4.1.2:
+  version "4.1.6"
+  resolved "https://registry.yarnpkg.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-4.1.6.tgz#5055c703febcf37fa06405d400c122b905167fc5"
+  integrity sha512-DUxuQaKoqfNne8iikd14SAkh5uw4+8vNifp6gmA73yYNS6ywLIWSLD/n/mBzHQRpW3J7rbATEakmiA8JvkTyZw==
   dependencies:
-    babel-code-frame "^6.22.0"
+    "@babel/code-frame" "^7.5.5"
     chalk "^2.4.1"
-    chokidar "^2.0.4"
     micromatch "^3.1.10"
     minimatch "^3.0.4"
     semver "^5.6.0"
@@ -17484,10 +17483,10 @@ ts-loader@^5.3.3:
     micromatch "^3.1.4"
     semver "^5.0.1"
 
-ts-loader@^6.0.0:
+ts-loader@^6.2.2:
   version "6.2.2"
-  resolved "https://registry.npm.taobao.org/ts-loader/download/ts-loader-6.2.2.tgz?cache=0&sync_timestamp=1607912199768&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fts-loader%2Fdownload%2Fts-loader-6.2.2.tgz#dffa3879b01a1a1e0a4b85e2b8421dc0dfff1c58"
-  integrity sha1-3/o4ebAaGh4KS4XiuEIdwN//HFg=
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-6.2.2.tgz#dffa3879b01a1a1e0a4b85e2b8421dc0dfff1c58"
+  integrity sha512-HDo5kXZCBml3EUPcc7RlZOV/JGlLHwppTLEHb3SHnr5V7NXD4klMEkrhJe5wgRbaWsSXi+Y1SIBN/K9B6zWGWQ==
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^4.0.0"
