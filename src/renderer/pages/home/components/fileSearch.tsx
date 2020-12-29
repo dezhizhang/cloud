@@ -21,20 +21,9 @@ const FileSearch = ({title,onFileSearch }) => {
         }
     });
     return (
-        <div>
-            {   !inputActive && 
-                <div >
-                    <span>{title}</span>
-                    <Button type="primary" onClick={() => setInputActive(true)}>搜索</Button>
-                </div>
-            }
-            {
-                inputActive &&
-                <div>
-                    <Input placeholder="请输入搜索内容"/>
-                    <Button type="primary" onClick={() => setInputActive(false)}>关闭</Button>
-                </div>
-            }
+        <div className={styles.fileSearch}>
+            <Input className={styles.fileInput} placeholder="请输入搜索内容"/>
+            <Button className={styles.fileButton} type="primary" onClick={() => setInputActive(false)}>搜索</Button>
         </div>
     )
 }
