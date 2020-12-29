@@ -1,5 +1,5 @@
 import React,{ useState } from 'react';
-import { Button,Input } from 'antd';
+import { Button,Input,Alert } from 'antd';
 import styles from '../styles/index.less';
 
 const FileSearch = ({title,onFileSearch }) => {
@@ -9,7 +9,7 @@ const FileSearch = ({title,onFileSearch }) => {
     return (
         <div>
             {   !inputActive && 
-                <div className={styles.header}>
+                <div >
                     <span>{title}</span>
                     <Button type="primary" onClick={() => setInputActive(true)}>搜索</Button>
                 </div>
