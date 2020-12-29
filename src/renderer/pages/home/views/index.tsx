@@ -4,7 +4,7 @@ import { Layout } from 'antd';
 import styles from '../styles/index.less'
 import FileSearch from '../components/fileSearch'
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content,Sider } = Layout;
 
 export default class Index extends Component<any,any> {
   
