@@ -5628,6 +5628,11 @@ didyoumean@1.2.1:
   resolved "https://registry.npm.taobao.org/didyoumean/download/didyoumean-1.2.1.tgz#e92edfdada6537d484d73c0172fd1eba0c4976ff"
   integrity sha1-6S7f2tplN9SE1zwBcv0eugxJdv8=
 
+diff-match-patch@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/diff-match-patch/download/diff-match-patch-1.0.5.tgz#abb584d5f10cd1196dfc55aa03701592ae3f7b37"
+  integrity sha1-q7WE1fEM0Rlt/FWqA3AVkq4/ezc=
+
 diff-sequences@^24.9.0:
   version "24.9.0"
   resolved "https://registry.npm.taobao.org/diff-sequences/download/diff-sequences-24.9.0.tgz?cache=0&sync_timestamp=1607352548704&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fdiff-sequences%2Fdownload%2Fdiff-sequences-24.9.0.tgz#5715d6244e2aa65f48bba0bc972db0b0b11e95b5"
@@ -18564,6 +18569,13 @@ vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.npm.taobao.org/vary/download/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
+
+vditor@^3.7.4:
+  version "3.7.4"
+  resolved "https://registry.npm.taobao.org/vditor/download/vditor-3.7.4.tgz#e2ec46f009e99d4ef1804d4ef355d44be7efb9a3"
+  integrity sha1-4uxG8AnpnU7xgE1O81XUS+fvuaM=
+  dependencies:
+    diff-match-patch "^1.0.5"
 
 vendors@^1.0.0:
   version "1.0.4"

@@ -67,7 +67,8 @@
   "dependencies": {
     "@ant-design/icons": "^4.3.0",
     "antd": "^4.9.4",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "vditor": "^3.7.4"
   },
   "electronWebpack": {
     "main": {
