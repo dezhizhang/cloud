@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import { Tabs } from 'antd';
 const { TabPane } = Tabs;
 
-const TabList = (props) => {
-    const {files,activeId,unsaveIds,onTabClick,onCloseTab} = props;
-    console.log('files',files)
+const TabList = ({files,activeId,unsaveIds,onTabClick,onCloseTab}) => {
     return (
         <>
         <Tabs
