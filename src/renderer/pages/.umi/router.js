@@ -17,6 +17,15 @@ const routes = [
     path: '/',
     component: __IS_BROWSER
       ? _dvaDynamic({
+          component: () => import('../login/views/index'),
+        })
+      : require('../login/views/index').default,
+    exact: true,
+  },
+  {
+    path: '/home',
+    component: __IS_BROWSER
+      ? _dvaDynamic({
           app: require('@tmp/dva').getApp(),
           models: () => [
             import('/Users/dezhizhang/Documents/project/cloud/src/renderer/pages/home/models/index.ts').then(
