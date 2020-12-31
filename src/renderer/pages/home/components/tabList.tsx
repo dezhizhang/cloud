@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import { Tabs } from 'antd';
 const { TabPane } = Tabs;
 
-const TabList = ({files,activeId,unsaveIds,onTabClick,onCloseTab}) => {
+const TabList = (props) => {
+    const {files,activeId,unsaveIds,onTabClick,onCloseTab} = props;
+    console.log('files',files)
     return (
         <>
         <Tabs
@@ -27,7 +29,7 @@ const TabList = ({files,activeId,unsaveIds,onTabClick,onCloseTab}) => {
 TabList.propTypes = {
     files:PropTypes.array,
     activeId:PropTypes.string,
-    unsaveIds:PropTypes.string,
+    unsaveIds:PropTypes.array,
 }
 
 export default TabList;
