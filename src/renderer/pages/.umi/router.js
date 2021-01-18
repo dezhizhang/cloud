@@ -8,9 +8,9 @@ import {
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/lib/renderRoutes';
 import history from '@@/history';
-import { routerRedux, dynamic as _dvaDynamic } from 'dva';
+import _dvaDynamic from 'dva/dynamic';
 
-const Router = routerRedux.ConnectedRouter;
+const Router = require('dva/router').routerRedux.ConnectedRouter;
 
 const routes = [
   {

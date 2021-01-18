@@ -1,0 +1,398 @@
+@import './vars';
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  overflow-y: hidden;
+  background-color: #f0f2f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e6e6e6;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.search-panel {
+  background-color: @grey-2;
+  padding: 24px 36px;
+  margin-bottom: 15px;
+}
+
+.ant-row.ant-form-item {
+  margin-bottom: 10px;
+}
+
+.detail-info-table {
+  width: 100%;
+  border: 1px solid #f2f2f2;
+
+  tr {
+    td {
+      border: 1px solid #f2f2f2;
+      height: 36px;
+      padding-left: 10px;
+    }
+
+    td.title,
+    td:nth-child(odd) {
+      font-weight: bold;
+      background-color: #f0f9ff;
+    }
+  }
+}
+
+.ant-modal-footer {
+  text-align: center;
+}
+
+.warning {
+  color: #ff9933;
+}
+
+.ant-affix {
+  // border: 1px solid #bbb;
+  box-shadow: 2px 2px 1px #bbb; //Firefox4.0-
+  //-moz-box-shadow:投影方式 X轴偏移量 Y轴偏移量阴影模糊半径 阴影扩展半径 阴影颜色;
+  //Safariand Google chrome10.0-
+  //-webkit-box-shadow:投影方式 X轴偏移量 Y轴偏移量阴影模糊半径 阴影扩展半径 阴影颜色;
+  //Firefox4.0+、 Google chrome 10.0+ 、 Oprea10.5+ and IE9
+  //box-shadow:  投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色;
+}
+
+.detail-table {
+  td {
+    height: 38px;
+    line-height: 38px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.ant-breadcrumb {
+  & > span {
+    &:last-child {
+      color: #999;
+      font-weight: normal;
+    }
+  }
+}
+
+.ant-message-notice-content {
+  padding: 0;
+
+  .ant-message-custom-content {
+    padding: 10px 16px;
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  .ant-message-success {
+    border: 1px solid #5acba0;
+  }
+
+  .ant-message-error {
+    border: 1px solid #ff6c60;
+  }
+
+  .ant-message-warning {
+    border: 1px solid #ff9933;
+  }
+}
+
+.ant-breadcrumb-link {
+  .anticon + span {
+    margin-left: 4px;
+  }
+}
+
+.blue-table {
+  .ant-table {
+    .ant-table-thead > tr > th {
+      border-color: @blue-2;
+    }
+  }
+
+  .ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th {
+    background: @blue-2;
+  }
+}
+
+.ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th {
+  background: #fafafa;
+}
+
+.ant-table {
+  .ant-table-thead > tr > th {
+    padding: 8px !important;
+  }
+
+  .ant-table-tbody {
+    margin: 0;
+  }
+
+  .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td {
+    padding: 8px;
+
+    &.collect {
+      font-weight: bold;
+    }
+
+    &.number {
+      text-align: right;
+      padding-right: 6px;
+    }
+
+    &.date {
+      text-align: right;
+      padding-right: 6px;
+    }
+
+    &.boolean {
+      text-align: center;
+      text-indent: 0;
+    }
+
+    &.operation {
+      min-width: 180px;
+      text-align: center !important;
+      text-indent: 0; // padding-left: 16px;
+      button {
+        margin-right: 5px;
+      }
+    }
+
+    .ant-input-number {
+      width: 100%;
+    }
+  }
+
+  // .ant-table-tbody > tr > td.number{
+  //   text-align: right;
+  //   padding-right: 6px;
+  // }
+  .ant-table-small > .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th {
+    background: #fafafa;
+  }
+
+  &.ant-table-small {
+    .ant-table-thead {
+      background: #fafafa;
+    }
+
+    .ant-table-thead > tr > th {
+      background: #fafafa;
+    }
+  }
+
+  .ant-table-footer {
+    padding: 0;
+  }
+
+  .editable {
+    color: #7cb2ee;
+  }
+
+  .image {
+    text-align: center;
+  }
+
+  .oddRow {
+    background: rgb(251, 251, 251);
+  }
+}
+
+.ant-popover-inner {
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 0 20px rgba(100, 100, 100, 0.2);
+}
+
+.vertical-center-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .ant-modal {
+    top: 0;
+
+    .ant-modal-body {
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+  }
+}
+
+.ant-form-item-control {
+  vertical-align: middle;
+}
+
+.ant-modal-mask {
+  background-color: rgba(55, 55, 55, 0.2);
+}
+
+.ant-modal-content {
+  box-shadow: none;
+}
+
+.ant-select-dropdown-menu-item {
+  padding: 12px 16px !important;
+}
+
+.ant-menu-item {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.margin-right {
+  margin-right: 16px;
+}
+
+a:focus {
+  text-decoration: none;
+}
+
+.ant-pagination,
+.ant-table-pagination {
+  width: 100%;
+  text-align: right;
+
+  .ant-pagination-total-text {
+    float: left;
+  }
+}
+
+.ant-confirm-btns {
+  text-align: center;
+  float: none !important;
+}
+
+.ant-tag {
+  border-radius: 16px;
+}
+
+// 字体颜色
+.blue-text {
+  color: @blue-6;
+}
+
+.gold-text {
+  color: @gold-6;
+}
+
+.red-text {
+  color: @red-6;
+}
+
+.green-text {
+  color: @green-6;
+}
+
+.affix-styles {
+  min-height: 40px;
+  background-color: #fff;
+  padding: 5px;
+
+  button {
+    margin-right: 10px;
+  }
+}
+
+.card {
+  margin-bottom: 10px;
+
+  .ant-card-head {
+    min-height: 32px;
+
+    .ant-card-head-title {
+      padding: 8px 0;
+    }
+
+    .ant-card-extra {
+      padding-top: 5px;
+      padding-bottom: 5px;
+
+      button {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.blue-card {
+  .ant-card-bordered {
+    border-color: @blue-6;
+  }
+
+  .ant-card-head {
+    background-color: @blue-2;
+    min-height: 32px;
+    border-bottom: 1px solid @blue-6;
+
+    .ant-card-head-title {
+      color: @blue-6;
+      padding: 8px 0;
+    }
+  }
+}
+
+.hmcore-imageuploader-preview .ant-btn-danger {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: #fff !important;
+}
+
+.subTable {
+  padding: 0 !important;
+  vertical-align: top;
+
+  .ant-table {
+    border-width: 0 !important;
+
+    .ant-table-thead > tr > th {
+      background: #fafafa !important;
+    }
+
+    .ant-table-tbody > tr > td {
+      height: 30px;
+      border-bottom: 1px solid #e8e8e8 !important;
+    }
+
+    .ant-table-tbody .ant-table-row:last-child td {
+      height: 30px;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .ant-col-xl-48 {
+    width: 20%;
+  }
+
+  .ant-col-xl-96 {
+    width: 40%;
+  }
+}
+
+@media (max-width: 767px) {
+  .ant-pagination-item,
+  .ant-pagination-next,
+  .ant-pagination-options,
+  .ant-pagination-prev {
+    margin-bottom: 8px;
+  }
+
+  .ant-card {
+    .ant-card-head {
+      padding: 0 12px;
+    }
+
+    .ant-card-body {
+      padding: 12px;
+    }
+  }
+}
