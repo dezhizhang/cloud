@@ -1,0 +1,139 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url('../../../assets/bg.png');
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;       
+    font-family: '微软雅黑';
+    overflow: hidden;
+    .login {
+      width: 664px;
+      height: 370px;
+      position: relative;
+  
+      left: 50%;
+      top: 50%;
+  
+      transform: translate(-50%,-50%);
+        .left{
+          padding: 16px  0 0 23px;
+          float: left;
+          width: 350px;
+          height: 370px;
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+          background-image: url('../../../assets/smallpic.png');
+          color: #FFFFFF;
+          p{
+            margin: 0;
+          }
+          .title{
+            font-size: 26px;
+          }
+          .detail{
+            font-size: 22px;
+            line-height: 51px;
+          }
+        }
+        .right{
+          width: 314px;
+          float: left;
+          height: 370px;
+          padding: 33px 41px ;
+          border-radius: 8px;
+          background-color: #fff;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+  
+          .logo{
+            margin-bottom: 55px;
+            display: flex;
+            justify-content: center;
+            img{
+              width: 216px;
+              height:78px ;
+            }
+          }
+          .loginFrom{
+            .login-form-forgot{
+              float: right;
+              font-size:12px;
+              font-family:'PingFang SC';
+              font-weight:400;
+              line-height:17px;
+              color: #0042F5;
+            }
+          }
+  
+        }
+        :global {
+          // p{
+          //   margin: 0;
+          // }
+          .ant-input-affix-wrapper .ant-input:not(:first-child) {
+            padding-left: 34px;
+          }
+          .ant-input:hover,.ant-input:active,.has-error .ant-input,.has-error .ant-input-group-addon,.ant-input:focus{
+            border-color: #C2C2C2;
+          }
+          .ant-form-item-control{
+            line-height: 0!important;
+          }
+          .ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled){
+            border-color: #C2C2C2;
+          }
+          .has-error .ant-input-affix-wrapper .ant-input:focus{
+            box-shadow: none;
+          }
+          .ant-input-group-addon:first-child{
+            width: 32px;
+            // border-color:  #C2C2C2;
+            background: #EDEDED;
+          }
+          .ant-input-group-addon{
+            padding: 0;
+          }
+          input ,input:focus,input:hover{
+            // height: 32px;
+            background: #F9F9F9;
+            padding-left: 8px;
+          }
+          input::-webkit-input-placeholder { 
+            font-family: 'MicrosoftYaHei';
+            font-size: 13px;
+            color: #999999;
+            letter-spacing: 0;
+          }
+  
+        }
+  
+      :global {
+        .ant-form-item:nth-child(2) {
+          // margin-bottom: 16px; 
+          position: relative;
+          top: -8px;
+        }
+      }
+      .prefixIcon {
+        font-size: 14px;
+        color: #8E90AD;
+      }
+      .submit {
+        height: 32px;
+        width: 100%;
+        border-radius: 4px;
+        font-family: '微软雅黑';
+        font-size: 16px;
+        color: #FFFFFF;
+        letter-spacing: -1px;
+        text-align: center;
+        margin-top: 0px;
+        background: #EA6356;
+        border: 1px solid #D0473A;
+        border-radius: 4px;
+      }
+    }
+  }
