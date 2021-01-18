@@ -7,10 +7,12 @@ import styles from '../styles/index.less';
 
 
 
-const Login  = () => {
+const Login  = (props) => {
   const onFinish = (values: any) => {
+    console.log("porps",props);
     console.log('Received values of form: ', values);
-  };
+  };  
+ 
   return (
     <div className={styles.container}>
     <div className={styles.login}>
@@ -55,5 +57,6 @@ const Login  = () => {
   )
 }
 
-export default Login;
+export default connect(({ login }) => ({ login }))(Login);
+
 
