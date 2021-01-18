@@ -11,8 +11,7 @@ const Login  = (props) => {
   const onFinish = (values: any) => {
     console.log("porps",props);
     console.log('Received values of form: ', values);
-  };  
- 
+  };   
   return (
     <div className={styles.container}>
     <div className={styles.login}>
@@ -20,9 +19,9 @@ const Login  = (props) => {
         <p className={styles.title}>欢迎登录</p>
       </div>
       <div className={styles.right}>
-        <p className={styles.logo}>
-          <a>前端临控平台</a>
-        </p>
+        <h1 className={styles.logo}>
+          前端监控平台
+        </h1>
         <Form
           name="normal_login"
           className="login-form"

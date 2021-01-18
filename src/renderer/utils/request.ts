@@ -1,6 +1,11 @@
-import fetch from 'dva/fetch';
-import { notification,message } from 'antd';
-import store from '../index';
+/**
+ * request 网络请求工具
+ * 更详细的 api 文档: https://github.com/umijs/umi-request
+ */
+import { extend } from 'umi-request';
+import { notification } from 'antd';
+import router from 'umi/router';
+const baseUrl = process.env.baseUrl;
 
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
@@ -17,106 +22,60 @@ const codeMessage = {
   500: '服务器发生错误，请检查服务器。',
   502: '网关错误。',
   503: '服务不可用，服务器暂时过载或维护。',
+  504: '网关超时。',
 };
 
-function parseJSON(response) {
-  return response.json();
-}
-
-function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
-    return response;
+/**
+ * 异常处理程序
+ */
+const errorHandler = error => {
+  const { response = {} } = error;
+  let errortext = codeMessage[response.status] || response.statusText;
+  const { status } = response;
+  // console.log(`response${JSON.stringify(response)}`)
+  if (status === 400 && !window.sessionStorage.getItem('token')) {
+    errortext = '账户名或密码错误'
   }
-
-  const errortext = codeMessage[response.status] || response.statusText;
+  if (status === 401) {
+    notification.error({
+      message: `登录已过期，请重新登录`,
+      duration: 2,
+    });
+    window.sessionStorage.clear()
+    router.replace({
+      pathname: '/login'
+    });
+    return
+  }
   notification.error({
-    // message: `请求错误 ${response.status}: ${response.url}`,
-    // message: `请求错误 ${response.status}`,
-    message: errortext,
-    duration: 3
+    message: `请求错误 ${status}`,
+    description: errortext,
   });
-  const error = new Error(errortext);
-  error.name = response.status;
-  error.response = response;
-  throw error;
-}
+  return error
+};
 
 /**
- * Requests a URL, returning a promise.
- *
- * @param  {string} url       The URL we want to request
- * @param  {object} [options] The options we want to pass to "fetch"
- * @return {object}           An object containing either "data" or "err"
+ * 配置request请求时的默认参数
  */
+const request = extend({
+  errorHandler, // 默认错误处理
+});
 
-export default function request(url, options) {
-  const defaultOptions = {
-    // credentials: 'include',
-    // withCredentials: true,
-    // mode: "cors"
-  };
-  const newOptions = { ...defaultOptions, ...options };
-  if (newOptions.method === 'POST') {
-    if (!(newOptions.body instanceof FormData)) {
-      newOptions.headers = {
-        Accept: 'application/json',
-        'Content-Type': 'application/json; charset=utf-8',
-        token: window.localStorage.getItem('zkToken') ? window.localStorage.getItem('zkToken') : '',
-        ...newOptions.headers,
-      };
-    } else {
-      newOptions.headers = {
-        Accept: 'application/json',
-        token: window.localStorage.getItem('zkToken') ? window.localStorage.getItem('zkToken') : '',
-        ...newOptions.headers,
-      };
+// request拦截器, 改变url 或 options.
+request.interceptors.request.use((url, options) => {
+  return (
+    {
+      url: options.mock ? url : `${baseUrl}${url}`,
+      options: {
+        ...options
+      },
     }
-  } else{
-    newOptions.headers = {
-      Accept: 'application/json',
-      token: window.localStorage.getItem('zkToken') ? window.localStorage.getItem('zkToken') : '',
-      ...newOptions.headers,
-    };
-  }
+  );
+});
 
-  return fetch(url, newOptions)
-    .then(checkStatus)
-    .then(parseJSON)
-    .then(data => {
-      const { dispatch } = store;
-      const status = data.code;
-      // console.log(data)
-      if (status >= 200 && status < 300) {
-        return data;
-      }
-      if (status === 401 ) {
-        dispatch({
-          type: 'login/logout',
-        });
-        return data;
-      }
-      const errortext = data.msg || codeMessage[status];
-      if(url==='/systemUser/login'){
-        return data;
-      }else{
-        // notification.error({
-        // message: errortext,
-        // duration: 3
-        // });
-        message.error(errortext)
-      }
-      return data;
-    })
-    .catch(e => {
-      const { dispatch } = store;
-      const status = e.name;
-      if (status === 401 || status === 403) {
-        dispatch({
-          type: 'login/logout',
-        });
-        return { code: status };
-      }
-      return { code: status };
-    });
+// response拦截器, 处理response
+request.interceptors.response.use(async(response) => {
+  return response
+});
 
-}
+export default request;
