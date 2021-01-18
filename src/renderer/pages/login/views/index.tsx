@@ -1,7 +1,6 @@
 import { connect } from 'dva';
 import React, { Component } from 'react';
 import { Layout } from 'antd';
-
 export default class Index extends Component<any,any> {
   
 
