@@ -5,7 +5,8 @@
 import { extend } from 'umi-request';
 import { notification } from 'antd';
 import router from 'umi/router';
-const baseUrl = process.env.baseUrl;
+// const baseUrl = process.env.baseUrl;
+
 
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
@@ -65,7 +66,7 @@ const request = extend({
 request.interceptors.request.use((url, options) => {
   return (
     {
-      url: options.mock ? url : `${baseUrl}${url}`,
+      url: options.mock ? url : `${url}`,
       options: {
         ...options
       },

@@ -8,9 +8,12 @@ import styles from '../styles/index.less';
 
 
 const Login  = (props) => {
+  //登录功能
   const onFinish = (values: any) => {
-    console.log("porps",props);
-    console.log('Received values of form: ', values);
+    props.dispatch({
+      type:'login/login',
+      payload:values
+    });
   };   
   return (
     <div className={styles.container}>
@@ -30,7 +33,10 @@ const Login  = (props) => {
         >
         <Form.Item
           name="email"
-          rules={[{ required: true, message: '邮箱不能为空！' }]}
+          rules={[
+            { required: true, message: '邮箱不能为空！', },
+            {pattern:/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/,message:'输入的邮箱不合法'}
+          ]}
         >
           <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="请输入邮箱" />
           </Form.Item>

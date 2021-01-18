@@ -18,7 +18,6 @@ export default {
         payload: response,
       });
       if (response.code === 200) {
-        console.dir(response)
         window.localStorage.setItem('zkToken',response.data)
         window.localStorage.setItem('userId',payload.loginName);
         yield put(routerRedux.replace('/index'));
