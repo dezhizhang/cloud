@@ -31,7 +31,7 @@ const routes = [
     exact: true,
   },
   {
-    path: '/home',
+    path: '/index',
     component: __IS_BROWSER
       ? _dvaDynamic({
           app: require('@tmp/dva').getApp(),

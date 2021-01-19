@@ -36,7 +36,7 @@ export default {
       component: './login/views/index',
     },
     {
-      path:'/home',
+      path:'/index',
       component:'./home/views/index'
     }
   ],
