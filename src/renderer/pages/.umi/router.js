@@ -17,9 +17,9 @@ const routes = [
     path: '/',
     component: __IS_BROWSER
       ? _dvaDynamic({
-          component: () => import('../../login/views/index'),
+          component: () => import('../@/pages/login/views/index'),
         })
-      : require('../../login/views/index').default,
+      : require('../@/pages/login/views/index').default,
     exact: true,
   },
   {

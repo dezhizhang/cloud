@@ -1,12 +1,9 @@
-export default {
-    
-  };
-  
+
   module.exports = {
     routes: [
         {
           path: '/',
-          component: '../login/views/index',
+          component: '@/pages/login/views/index',
         },
       //   {
       //     path: '/cloud',
