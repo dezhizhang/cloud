@@ -1,5 +1,7 @@
 const path = require('path');
-const theme = require('../theme.config.js')
+const theme = require('../theme.config.js');
+const pageRoutes = require('./routes');
+console.log('pageRoutes',pageRoutes)
 const { NODE_ENV } = process.env
 
 export default {
@@ -25,21 +27,22 @@ export default {
   proxy:{
     '/api/v1': {
       //明哥那边的地址
-      target: 'http://192.168.143.71:8082',
+      target: 'http://0.0.0.0:8082',
       changeOrigin: true,
       pathRewrite: { '/api/v1': '/api/v1' },
     },
   },
-  routes: [
-    {
-      path: '/',
-      component: './login/views/index',
-    },
-    {
-      path:'/index',
-      component:'./home/views/index'
-    }
-  ],
+  routes:pageRoutes.routes,
+  // routes: [
+  //   {
+  //     path: '/',
+  //     component: './login/views/index',
+  //   },
+  //   {
+  //     path:'/index',
+  //     component:'./home/views/index'
+  //   }
+  // ],
   // lessLoader: { javascriptEnabled: true },
   ignoreMomentLocale: true,
   targets: {
