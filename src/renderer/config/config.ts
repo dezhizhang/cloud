@@ -22,7 +22,14 @@ export default {
       },
     ],
   ],
-  proxy:{},
+  proxy:{
+    '/api/v1': {
+      //明哥那边的地址
+      target: 'http://192.168.143.71:8082',
+      changeOrigin: true,
+      pathRewrite: { '/api/v1': '/api/v1' },
+    },
+  },
   routes: [
     {
       path: '/',

@@ -3,7 +3,7 @@
  * 更详细的 api 文档: https://github.com/umijs/umi-request
  */
 import { extend } from 'umi-request';
-import { notification } from 'antd';
+import { notification,message } from 'antd';
 import router from 'umi/router';
 // const baseUrl = process.env.baseUrl;
 
@@ -60,23 +60,49 @@ const errorHandler = error => {
  */
 const request = extend({
   errorHandler, // 默认错误处理
+  timeout: 15000,
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json; charset=utf-8',
+    // Authorization: authorization(noAuth),
+  }
 });
+
+
 
 // request拦截器, 改变url 或 options.
 request.interceptors.request.use((url, options) => {
+  let newOption = {...options}
+  if(newOption.method === 'POST' || newOption.method === 'DELETE' || newOption.method === 'PUT') {
+   // params --> 会被放到body的请求参数，POST／PUT／DELETE 方法
+    newOption.data = newOption.body
+  }else {
+   // params --> 会被拼接到url上的的请求参数，GET方法
+    newOption.params = newOption.body  
+  }
+  if(newOption.body) {
+   //  为了保证调用的一致性，外部都通过自定义的body传递参数，但body是关键字需要手动清除
+    newOption = _omit(newOption, 'body') 
+  }
   return (
     {
       url: options.mock ? url : `${url}`,
       options: {
-        ...options
+        ...newOption
       },
     }
   );
 });
 
 // response拦截器, 处理response
-request.interceptors.response.use(async(response) => {
-  return response
+request.interceptors.response.use(async response => {
+  const data = await response.clone().json()
+  if(data.status !== 200 && data.message){
+    message.error(data.message)
+  }
+  return  response;
 });
 
 export default request;
+
+
