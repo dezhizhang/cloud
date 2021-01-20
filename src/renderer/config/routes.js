@@ -1,24 +1,21 @@
 
-  export default {
-   
-  }
-
   module.exports = {
     routes: [
       {
         path: '/',
         component: './login/views/index',
       },
-    //   {
-    //     path: '/cloud',
-    //     component: '@/pages/app',
-    //     routes: [
-    //     //   {
-    //     //     path: '/changePassword',
-    //     //     component: '@/pages/system/employee/views/changePassword',
-    //     //   },
+      {
+        path: '/cloud',
+        component: './app',
+        
+        routes: [
+          {
+            path: '/user',
+            component: './home/views/index',
+          },
          
-    //     ],
-    //   },
+        ],
+      },
     ],
   }

@@ -23,7 +23,7 @@ export default class Index extends Component<any,any> {
             <FileSearch title={"hello"} onFileSearch={() => {}}/>
           </Sider>
           <Content className={styles.content}>
-            <TabList files={files} onFileClick={() => {}} onSaveEdit={()=> {}} unsaveIds={[]}/>
+            <TabList files={files} onFileClick={() => {}} onSaveEdit={()=> {}}/>
           </Content>
         </Layout>
       </Layout>

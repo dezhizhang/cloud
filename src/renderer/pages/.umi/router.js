@@ -31,6 +31,41 @@ const routes = [
     exact: true,
   },
   {
+    path: '/cloud',
+    component: __IS_BROWSER
+      ? _dvaDynamic({
+          component: () => import('../app'),
+        })
+      : require('../app').default,
+    routes: [
+      {
+        path: '/user',
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              app: require('@tmp/dva').getApp(),
+              models: () => [
+                import('/Users/dezhizhang/Documents/project/cloud/src/renderer/pages/home/models/index.ts').then(
+                  m => {
+                    return { namespace: 'index', ...m.default };
+                  },
+                ),
+              ],
+              component: () => import('../home/views/index'),
+            })
+          : require('../home/views/index').default,
+        exact: true,
+      },
+      {
+        component: () =>
+          React.createElement(
+            require('/Users/dezhizhang/Documents/project/cloud/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+              .default,
+            { pagesPath: 'pages', hasRoutesInConfig: true },
+          ),
+      },
+    ],
+  },
+  {
     component: () =>
       React.createElement(
         require('/Users/dezhizhang/Documents/project/cloud/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')

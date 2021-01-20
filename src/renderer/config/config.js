@@ -3,15 +3,8 @@
 const path = require('path');
 const theme = require('../theme.config.js');
 const pageRoutes = require('./routes');
-// import path from 'path';
-// import theme from '../theme';
-// import pageRoutes from './routes';
-// // const path = require('path');
-// // const theme = require('../theme.config.js');
-// // const pageRoutes = require('./routes');
-// // console.log('pageRoutes',pageRoutes)
 const { NODE_ENV } = process.env;
-console.log("pageRoutes",pageRoutes.routes);
+
 
 export default {
   hash:true,
@@ -42,18 +35,13 @@ export default {
     },
   },  
   routes:pageRoutes.routes,
-  // routes: [
-  //   {
-  //     path: '/',
-  //     component: './login/views/index',
-  //   },
-  //   {
-  //     path:'/index',
-  //     component:'./home/views/index'
-  //   }
-  // ],
   // lessLoader: { javascriptEnabled: true },
   ignoreMomentLocale: true,
+  alias: {
+    components: path.resolve(__dirname, 'src/components'),
+    utils: path.resolve(__dirname, 'src/utils/'),
+    types: path.resolve(__dirname, 'src/types/'),
+  },
   targets: {
     //兼容IE11
     ie: 11,
