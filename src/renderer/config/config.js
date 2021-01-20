@@ -1,8 +1,17 @@
+
+
 const path = require('path');
 const theme = require('../theme.config.js');
 const pageRoutes = require('./routes');
-console.log('pageRoutes',pageRoutes)
-const { NODE_ENV } = process.env
+// import path from 'path';
+// import theme from '../theme';
+// import pageRoutes from './routes';
+// // const path = require('path');
+// // const theme = require('../theme.config.js');
+// // const pageRoutes = require('./routes');
+// // console.log('pageRoutes',pageRoutes)
+const { NODE_ENV } = process.env;
+console.log("pageRoutes",pageRoutes.routes);
 
 export default {
   hash:true,
@@ -31,7 +40,7 @@ export default {
       changeOrigin: true,
       pathRewrite: { '/api/v1': '/api/v1' },
     },
-  },
+  },  
   routes:pageRoutes.routes,
   // routes: [
   //   {
