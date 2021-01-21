@@ -65,7 +65,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.3.0",
+    "@ant-design/icons": "^4.4.0",
     "antd": "^4.9.4",
     "classnames": "^2.2.6",
     "dva": "^2.4.1",
