@@ -1,23 +1,21 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from './app.less';
+import styles from './index.less';
 import { Layout } from 'antd';
-import HeaderPage from './layout/header';
-import SidePage from './layout/side';
-import FooterPage from './layout/side'
+import HeaderPage from './header';
+import SidePage from './side';
+import FooterPage from '../components/footer/FooterPage';
 const {  Sider, Content } = Layout;
 
-
-interface AppProps{
-  dispatch:any;
+interface IndexProps{
+    dispatch:any;
+}
+interface IndexState{
+    collapsed:boolean;
 }
 
-interface AppState{
-  collapsed:boolean;
-}
 
-
-class AppPage extends React.Component<AppProps,AppState> {
+class Index extends React.Component<IndexProps,IndexState> {
   constructor(props) {
     super(props)
     this.state = {
@@ -66,4 +64,4 @@ class AppPage extends React.Component<AppProps,AppState> {
   }
 }
 
-export default connect()(AppPage);
+export default connect()(Index);
