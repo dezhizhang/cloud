@@ -49,7 +49,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "concurrently": "^3.5.1",
     "electron": "^4.0.5",
-    "electron-builder": "^20.38.5",
+    "electron-builder": "^22.11.7",
     "electron-debug": "^2.1.0",
     "electron-webpack": "^2.6.2",
     "electron-webpack-ts": "^3.1.1",
